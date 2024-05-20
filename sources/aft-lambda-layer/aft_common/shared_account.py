@@ -48,7 +48,7 @@ def shared_account_request(event_record: Dict[str, Any], auth: AuthClient) -> bo
             ):
                 current_ou = orgs_agent.get_ou_from_account_id(account_id=shared_account_id)
                 raise ValueError(
-                    f"Unsupported action: Cannot change OU for a Shared CT account or CT management account [{request_ou}] [{shared_account_id}] [{current_ou["Name"]}]"
+                    f"Unsupported action: Cannot change OU for a Shared CT account or CT management account |{request_ou}| |{shared_account_id}| |{current_ou['Name']}|"
                 )
             return True
         elif (
